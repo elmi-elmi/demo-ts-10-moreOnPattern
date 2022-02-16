@@ -1,3 +1,4 @@
+import {Sorter} from "./Sorter";
 class MyNode {
     next: MyNode | null = null;
 
@@ -5,7 +6,7 @@ class MyNode {
     }
 }
 
-export class LinkedList {
+export class LinkedList extends Sorter{
     head: MyNode | null = null;
 
     add(data: number): void {
@@ -51,10 +52,8 @@ export class LinkedList {
             node = node.next;
         }
 
-        console.log(counter,index)
-        console.log('counter---->',counter)
 
-        throw new Error('Indexxx out of bounds');
+        throw new Error('Index out of bounds');
     }
 
     compare(leftIndex: number, rightIndex: number): boolean {
